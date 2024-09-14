@@ -1,0 +1,81 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background: rgb(219, 214, 214);
+}
+.header{
+    background-image: url("../images/sven-mieke-Zj6bUfkThFM-unsplash.jpg");
+    width: 100%;
+    height: 650px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#header{
+    background:#34495e;
+}
+#header h1{
+    color: orange;
+}
+#header ul{
+    display: flex;
+    justify-content: center;
+}
+#header ul li{
+    list-style-type: none;
+    margin: 0px 10px;
+    padding: 4px 10px;
+}
+#header ul li a {
+    color: rgb(219, 205, 205);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.5s ease;
+
+}
+#header ul li a:hover{
+    color: orange;
+}
+.register{
+    margin: 40px 0px;
+    color: #34495e;
+}
+.register1{
+    margin: 40px 0px;
+}
+.register1::after{
+    content: "";
+    width: 350px;
+    height: 4px;
+    background: #f39c12;
+    position: absolute;
+    top: 90px;
+    right: 35%; 
+}
+.car{
+    width: 100px;
+    height: 100px;
+}
+#car{
+    text-transform: capitalize;
+    background: rgba(44, 62, 80,0.6);
+    position: absolute;
+    padding: 20px;
+    margin: 100px 0px 0px 50px;
+    border-radius: 4px;
+}
+
+#car h2{
+    color: rgba(225, 177, 44,1.0);
+    letter-spacing: 1px;
+    text-align: center;
+}
+#car h3{
+    color: white;
+}
+
+#car h3 span{
+    color: rgba(225, 177, 44,1.0);
+}

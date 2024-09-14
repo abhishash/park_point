@@ -1,0 +1,80 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background: rgb(219, 214, 214);
+    text-align: center;
+}
+body h1{
+    color: orange;
+    font-size: 40px;
+}
+.login-form, .admin-form{
+    margin-top: 100px;
+}
+
+.login-form h1, .admin-form h1{
+    font-size: 32px;
+    color: #34495e;
+}
+form{
+    margin-top: 35px;
+}
+
+.login-form label, .admin-form label{
+    font-size: 20px;
+    color: #34495e;
+    font-weight: bold;
+}
+input{
+    height: 20px;
+    width: 17%;
+    font-size: 15px;
+    padding: 0px 6px;
+    outline: none;
+}
+form .submit{
+    background: #34495e;
+    border: transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 40px;
+    width: 10%;
+    margin-top: 15px;
+    transition: all 0.5s ease;
+}
+form .submit:hover{
+    background: #3498db;
+    cursor: pointer;
+}
+
+#header{
+    background: #34495e;
+}
+
+#header h1{
+    color: orange;
+}
+#header ul{
+    display: flex;
+    justify-content: center;
+}
+#header ul li{
+    list-style-type: none;
+    margin: 0px 10px;
+    padding: 4px 10px;
+}
+#header ul li a{
+    color: rgb(219, 205, 205);
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease;
+
+}
+#header ul li a:hover{
+    color: orange;
+}
