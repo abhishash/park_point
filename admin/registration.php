@@ -13,7 +13,7 @@ if ($pass == $co_pass) {
         $sql = "INSERT INTO  admin_info(username, password) VALUES ('{$username}', '{$pass}')";
         $result = mysqli_query($conn, $sql) or die("query failed!");
         mysqli_close($conn);
-        header("location:http://localhost/project/index.php");
+        header("location:http://localhost/parking-point/admin/index.php");
     }
 } else {
     echo "Your confirm and password is not same!";

@@ -8,7 +8,7 @@ $result = mysqli_query($conn, $sql) or die("query failed!");
 $num = mysqli_num_rows($result);
 if ($num == 1) {
     $_SESSION["username"] = $name;
-    header("location:http://localhost/project/index.php");
+    header("location:http://localhost/parking-point/admin/index.php");
 } else {
-    header("location:http://localhost/project/login.php");
+    header("location:http://localhost/parking-point/admin/login.php");
 }
