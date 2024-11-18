@@ -3,6 +3,6 @@
     $conn = Mysqli_connect("localhost", "root", "", "parking_project") or die("conection failed!");
     $sql = "DELETE FROM vehicle_info where Token_number = '{$Token_number}'";
     $result = mysqli_query($conn, $sql) or die("query Failed");
-    header("location: http://localhost/parking-point/admin/index.php");
+    header("location: http://localhost/parking-point/agent/index.php");
     mysqli_close($conn);
 ?>
