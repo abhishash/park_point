@@ -5,8 +5,8 @@ $username = '';
 $password = '';
 $user_type = 0; // Default user type
 $error_message = '';
-if (isset($_SESSION["username"]) && $_SESSION["user_type"] === 'admin'){
-        header("Location: http://localhost/parking-point/admin/index.php");
+if (isset($_SESSION["username"]) && $_SESSION["user_type"] === 'admin') {
+    header("Location: http://localhost/parking-point/admin/index.php");
 }
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,31 +25,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Enable error reporting
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    // Prepare the SQL statement
-    $stmt = $conn->prepare("SELECT password FROM admin WHERE email = ?");
+    $stmt = $conn->prepare("SELECT password, firstname, lastname FROM admin WHERE email = ?");
 
-    // Check if statement preparation was successful
     if (!$stmt) {
         die("Error preparing statement: " . htmlspecialchars($conn->error));
     }
 
-    // Bind parameters
     $stmt->bind_param("s", $username);
-
-    // Execute the statement
     $stmt->execute();
-
-    // Store the result
     $stmt->store_result();
 
-    // Check if user exists
     if ($stmt->num_rows == 1) {
-        $stmt->bind_result($hashed_password);
+        $stmt->bind_result($hashed_password, $firstname, $lastname);
         $stmt->fetch();
 
-        // Verify the password (assuming passwords are hashed)
         if (password_verify($password, $hashed_password)) {
             $_SESSION["username"] = $username;
+            $_SESSION["firstname"] = $firstname;
+            $_SESSION["lastname"] = $lastname;
             $_SESSION["user_type"] = 'admin';
             header("Location: http://localhost/parking-point/admin/index.php");
             exit();
@@ -59,6 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $error_message = "Invalid username or password.";
     }
+
 
     // Close the statement and connection
     $stmt->close();
